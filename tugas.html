@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIERA - Sistem Informasi PATRIBERA</title>
+    <link rel="stylesheet" href="tugas.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="content-wrap">
+            <header>
+                <nav>
+                  <div class="logo">
+                    <img src="Assets/patribera-logo.png" alt="Logo" />
+                  </div>
+                  <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Cari Pengguna</a></li>
+                    <li><a href="tugas.html">Tugas</a></li>
+                  </ul>
+                  <div class="profile">
+                    <img src="Assets/Ellipse 30.png" alt="Profile" />
+                  </div>
+                </nav>
+            </header>
+
+            <div class="container">
+                <div class="content">
+                    <div class="tab-buttons">
+                        <button class="tab-button active" onclick="showTab('tugas')">Tugas</button>
+                        <button class="tab-button" onclick="showTab('presensi')">Presensi</button>
+                    </div>
+                    <div id="tugas-content">
+                        <!-- Tugas content -->
+                    </div>
+                    <div id="presensi-content" style="display:none;">
+                        <!-- Presensi content -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-content">
+              <div class="footer-logo">
+                <img src="Assets/patribera-logo.png" alt="Logo" />
+                <div class="footer-info">
+                  <h1>SIERA</h1>
+                  <p>Sistem Informasi PATRIBERA</p>
+                </div>
+              </div>
+              <div class="footer-links">
+                <div class="footer-pages">
+                  <h3>Pages</h3>
+                  <ul>
+                    <li>Home</li>
+                    <li>Cari Pengguna</li>
+                    <li>Tugas</li>
+                    <li>Profile</li>
+                  </ul>
+                </div>
+                <div class="footer-contact">
+                  <h3>Contact Us</h3>
+                  <ul>
+                    <li>
+                      <img src="Assets/call.png" alt="Phone" /> 081234567899 (chat only)
+                    </li>
+                    <li>
+                      <img src="Assets/mesages.png" alt="Email" />
+                      PATRIBERAUPNVJ@gmail.com
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer-bottom">
+              <p>
+                Copyright © Kelompok 7. Made at FIK UPNVJ for Praktikum Pemrograman
+                Web
+              </p>
+            </div>
+          </footer>
+    </div>
+
+    <script>
+        // JavaScript remains the same as in the previous version
+        const tugasData = [
+            { title: "Tugas 1 - Posting Twibbon", date: "Kamis, 10 Oktober 2024", time: "23:59", type: "Image" },
+            { title: "Tugas 2 - Video Ekspedisi Bela Negara", date: "Kamis, 10 Oktober 2024", time: "23:59", type: "Link Video" },
+            { title: "Tugas 3 - Membuat CV dan LinkedIn", date: "Kamis, 10 Oktober 2024", time: "23:59", type: "PDF dan Link LinkedIn" }
+        ];
+
+        const presensiData = [
+            { title: "DAY 1 - SESI 1", date: "Senin, 1 Januari 2024", time: "10:00", type: "Image" },
+            { title: "DAY 1 - SESI 2", date: "Senin, 1 Januari 2024", time: "17:00", type: "Image" },
+            { title: "DAY 2 - SESI 1", date: "Kamis, 10 Oktober 2024", time: "10:00", type: "Image" },
+            { title: "DAY 2 - SESI 2", date: "Kamis, 10 Oktober 2024", time: "17:00", type: "Image" }
+        ];
+
+        function createCard(item) {
+    return `
+        <div class="card">
+            <div class="card-title">${item.title}</div>
+            <div class="card-info">
+                <div class="card-details">
+                    <span>
+                        <img src="Assets/date.png" alt="Calendar Icon" class="icon" /> 
+                        ${item.date}
+                    </span>
+                    <span>
+                        <img src="Assets/time.png" alt="Clock Icon" class="icon" /> 
+                        ${item.time}
+                    </span>
+                    <span>
+                        <img src="Assets/type.png" alt="File Icon" class="icon" /> 
+                        ${item.type}
+                    </span>
+                </div>
+                <a href="#" class="see-details">See Details</a>
+            </div>
+        </div>
+    `;
+}
+
+        function populateContent(contentId, data) {
+            const content = document.getElementById(contentId);
+            content.innerHTML = data.map(createCard).join('');
+        }
+
+        function showTab(tabName) {
+            document.getElementById('tugas-content').style.display = tabName === 'tugas' ? 'block' : 'none';
+            document.getElementById('presensi-content').style.display = tabName === 'presensi' ? 'block' : 'none';
+            
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        // Initial population of content
+        populateContent('tugas-content', tugasData);
+        populateContent('presensi-content', presensiData);
+        function toggleDropdown() {
+    var dropdown = document.getElementById("dropdown-menu");
+    dropdown.classList.toggle("show");
+}
+
+        
+    </script>
+</body>
+</html>
