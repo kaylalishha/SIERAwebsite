@@ -15,7 +15,7 @@ if (!isset($_SESSION['id_user']) || $_SESSION['role'] != 'mentor') {
     <link rel="stylesheet" href="mentor.css">
     <style>
         body {
-            zoom: 0.8; /* Untuk Chrome */
+            zoom: 0.8; 
         }
     </style>
 </head>
@@ -28,7 +28,6 @@ if (!isset($_SESSION['id_user']) || $_SESSION['role'] != 'mentor') {
     <!-- Main content (Form data mentor) -->
     <div class="mentor-container">
     <?php
-// Define the faculties and their corresponding majors
 $faculties = [
     "Ekonomi dan Bisnis" => [
         "Perbankan dan Keuangan - D3",
