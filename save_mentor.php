@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset($_SESSION['id_user']) || $_SESSION['role'] != 'mentor') {
-    header("Location: index.php");
+    header("Location: index.html");
     exit();
 }
 
@@ -34,7 +34,7 @@ $sql = "INSERT INTO mentor (id_user, nim_mentor, nama, fakultas, jurusan, kelomp
 
 if ($conn->query($sql) === TRUE) {
     // Redirect ke dashboard setelah berhasil menyimpan data
-    header("Location: dashboard.php");
+    header("Location: index.html");
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
