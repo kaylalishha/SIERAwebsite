@@ -1,6 +1,6 @@
 <?php
-session_start();
 
+include 'profileAdd.php';
 // Cek apakah user sudah login dan role adalah mentor
 if (!isset($_SESSION['id_user']) || $_SESSION['role'] != 'mentor') {
     header("Location: index.php?error=" . urlencode("Anda harus login sebagai mentor!"));
@@ -41,7 +41,7 @@ if ($mentor_result->num_rows > 0) {
 // Ambil data mahasiswa berdasarkan kelompok yang sama
 $mahasiswa_list = [];
 if ($kelompok !== null) {
-    $mahasiswa_query = "SELECT nama, jurusan, fakultas, no_telp, id_line FROM mahasiswa WHERE kelompok = '$kelompok'";
+    $mahasiswa_query = "SELECT nama, nim_mhs, jurusan, no_telp, id_line FROM mahasiswa WHERE kelompok = '$kelompok'";
     $mahasiswa_result = $conn->query($mahasiswa_query);
 
     if ($mahasiswa_result->num_rows > 0) {
@@ -105,7 +105,7 @@ $conn->close();
             <!-- Profile Card -->
             <div class="bg-white rounded-xl shadow-md p-6 mb-6 border">
                 <div class="flex items-center space-x-4">
-                    <img src="Assets/Ellipse 30.png" alt="Profile" class="rounded-full w-14 h-14">
+                    <img src="<?php echo $profile_image; ?>" alt="Profile" class="rounded-full w-14 h-14">
                     <div>
                         <div class="font-medium text-lg"><?php echo $nama_mentor; ?></div>
                         <div class="font-medium text-lg"><?php echo $nim_mentor; ?></div>
@@ -144,8 +144,8 @@ $conn->close();
                             <thead>
                                 <tr>
                                     <th class="py-2 px-4 border-b">Nama</th>
-                                    <th class="py-2 px-4 border-b">Jurusan</th>
-                                    <th class="py-2 px-4 border-b">Fakultas</th>
+                                    <th class="py-2 px-4 border-b">NIM</th>
+                                    <th class="py-2 px-4 border-b">Program Studi</th>
                                     <th class="py-2 px-4 border-b">No. Telp</th>
                                     <th class="py-2 px-4 border-b">ID Line</th>
                                 </tr>
@@ -154,8 +154,8 @@ $conn->close();
                                 <?php foreach ($mahasiswa_list as $mahasiswa): ?>
                                     <tr>
                                         <td class="py-2 px-4 border-b"><?php echo $mahasiswa['nama']; ?></td>
+                                        <td class="py-2 px-4 border-b"><?php echo $mahasiswa['nim_mhs']; ?></td>
                                         <td class="py-2 px-4 border-b"><?php echo $mahasiswa['jurusan']; ?></td>
-                                        <td class="py-2 px-4 border-b"><?php echo $mahasiswa['fakultas']; ?></td>
                                         <td class="py-2 px-4 border-b"><?php echo $mahasiswa['no_telp']; ?></td>
                                         <td class="py-2 px-4 border-b"><?php echo $mahasiswa['id_line']; ?></td>
                                     </tr>
