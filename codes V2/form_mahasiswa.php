@@ -77,7 +77,10 @@ $faculties = [
             <input type="text" id="nim_mhs" name="nim_mhs" placeholder="NIM Mahasiswa" required>
             
             <input type="text" id="nama" name="nama" placeholder="Nama Mahasiswa" required>
-            
+            <br> <br>
+            <label for="tanggal_lahir">Tanggal Lahir</label> <br> <br>
+            <input type="date" id="tanggal_lahir" name="tanggal_lahir" placeholder="Tanggal Lahir" required> <br> <br>
+
             <select id="fakultas" name="fakultas" required onchange="populateJurusan()">
                 <option value="" disabled selected>Pilih Fakultas</option>
                 <?php foreach (array_keys($faculties) as $faculty): ?>
@@ -89,6 +92,8 @@ $faculties = [
                 <option value="" disabled selected>Pilih Jurusan</option>
             </select>
             
+            <input type="text" id="domisili" name="domisili" placeholder="Domisili">
+
             <input type="text" id="asalsma" name="asalsma" placeholder="Asal SMA">
 
             <input type="text" id="kelompok" name="kelompok" placeholder="Kelompok">
