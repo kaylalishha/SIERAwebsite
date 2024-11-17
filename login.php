@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="login.css">
+    <style>
+        body {
+            zoom: 0.8; /* Untuk Chrome */
+        }
+    </style>
     
 </head>
 <body>
@@ -71,5 +76,6 @@
             <p>Copyright © Kelompok 7. Made at FIK UPNVJ for Praktikum Pemrograman Web</p>
         </div>
     </footer>
+    
 </body>
 </html>

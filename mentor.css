@@ -1,3 +1,5 @@
+/* mentor.css */
+
 /* General styles */
 * {
   margin: 0;
@@ -20,8 +22,8 @@ body {
 /* Navbar styles */
 .navbar {
   background-color: #6bb478;
-  padding: 20px 0; /* Increased padding for navbar */
-  text-align: center; /* Center logo */
+  padding: 20px 0;
+  text-align: center;
   position: fixed;
   width: 100%;
   top: 0;
@@ -31,21 +33,22 @@ body {
   width: 120px;
 }
 
-/* Login container */
-.login-container {
-  margin-top: 100px; /* Adjusted for navbar */
+/* Mentor container */
+.mentor-container {
+  margin-top: 100px;
   text-align: left;
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centering the login container */
-  justify-content: center; /* Center vertically */
-  flex-grow: 1; /* Allow the container to grow and center vertically */
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
 }
 
 h2 {
   font-size: 24px;
   margin-bottom: 20px;
+  margin-top: 90px;
 }
 
 .highlight {
@@ -57,8 +60,7 @@ form {
   margin: 0 auto;
 }
 
-input[type="email"],
-input[type="password"] {
+input[type="text"] {
   width: 100%;
   padding: 10px;
   margin: 10px 0;
@@ -66,24 +68,48 @@ input[type="password"] {
   border-radius: 5px;
 }
 
-.login-btn {
+.mentor-btn {
   background-color: #6bb478;
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  width: 400px;
+  width: 100%;
   font-size: 18px;
   margin-top: 10px;
+  transition: background-color 0.3s ease;
 }
 
-.remember {
-  text-align: left;
-  margin-bottom: 20px;
+.mentor-btn:hover {
+  background-color: #5aa367;
 }
 
-/* Footer styles */
+select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  appearance: none; /* Menghilangkan default dropdown style */
+  background-color: white;
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%236bb478" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 50%;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  margin-right: 2rem;
+  padding: 1rem;
+  padding-right: 2rem;
+}
+
+.mentor-container input,
+.mentor-container select {
+  color: #757575; /* Ubah warna teks menjadi abu-gelap */
+}
+
+/* Footer styles (sama dengan login) */
 footer {
   background-color: #6bb478;
   color: white;
@@ -94,10 +120,10 @@ footer {
 
 .footer-content {
   display: flex;
-  justify-content: space-between; /* Membuat jarak antara konten footer */
+  justify-content: space-between;
   align-items: center;
-  max-width: 90%; /* Batas lebar maksimum */
-  margin: 0 auto; /* Memusatkan konten secara horizontal */
+  max-width: 90%;
+  margin: 0 auto;
   padding-bottom: 10px;
 }
 
@@ -127,7 +153,7 @@ footer {
 .footer-links {
   display: flex;
   justify-content: flex-end;
-  text-align: right; /* Mengatur teks di kanan */
+  text-align: right;
 }
 
 .footer-links div {
@@ -155,9 +181,29 @@ footer {
   margin-right: 10px;
 }
 
-/* Footer bottom (Copyright section) */
 .footer-bottom {
-  text-align: center; /* Memusatkan teks copyright */
+  text-align: center;
   margin-top: 10px;
   font-size: 14px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .nav-links a {
+    margin: 0 10px;
+    font-size: 0.9rem;
+  }
+
+  .tab-button {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .card-info span {
+    font-size: 0.9rem;
+  }
+
+  .footer-logo img {
+    width: 60px;
+  }
 }
