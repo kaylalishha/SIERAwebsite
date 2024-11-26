@@ -28,6 +28,7 @@ $no_telp = $_POST['no_telp'];
 $instagram = $_POST['instagram'];
 $id_line = $_POST['id_line'];
 
+$_SESSION['nim_mentor'] = $nim_mentor;
 // Query untuk menyimpan data mentor
 $sql = "INSERT INTO mentor (id_user, nim_mentor, nama, fakultas, jurusan, kelompok, no_telp, instagram, id_line) 
         VALUES ('$id_user', '$nim_mentor', '$nama', '$fakultas', '$jurusan', '$kelompok', '$no_telp', '$instagram', '$id_line')";
