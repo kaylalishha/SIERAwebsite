@@ -32,6 +32,4 @@ if ($id_user && $role) {
         }
     }
 }
-
-$conn->close();
 ?>

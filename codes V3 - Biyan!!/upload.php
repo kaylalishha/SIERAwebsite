@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
                 $queryInsert = "INSERT INTO penilaian_tugas (nim_mhs, nim_mentor, id_tugas, file_path) 
                                 VALUES ('$nim_mhs', '$nim_mentor', '$id_tugas', '$targetFile')";
                 if ($conn->query($queryInsert)) {
-                    echo "File berhasil diupload dan disimpan ke database!";
+                    header("Location: tugas.php");
                 } else {
                     echo "Error: " . $conn->error;
                 }

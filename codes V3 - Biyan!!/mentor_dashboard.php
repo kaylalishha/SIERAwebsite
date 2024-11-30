@@ -258,7 +258,7 @@ $conn->close();
                         content += '<thead><tr><th class="py-2 px-4 border">Pengerjaan Tugas</th><th class="py-2 px-4 border">NIM</th><th class="py-2 px-4 border">Nilai</th><th class="py-2 px-4 border">Komentar</th><th class="py-2 px-4 border">Aksi</th></tr></thead><tbody>';
                         data.forEach(item => {
                             content += `<tr>
-                            <td class="py-2 px-4 border"><a href="${item.file_path}" download>Lihat Tugas</a></td>
+                            <td class="py-2 px-4 border"><a href="${item.file_path}" style="color: green;" download>Lihat Tugas</a></td>
                             <td class="py-2 px-4 border">${item.nim_mhs}</td>
                             <td class="py-2 px-4 border">${item.nilai ?? '-'}</td>
                             <td class="py-2 px-4 border">${item.komentar ?? '-'}</td>
