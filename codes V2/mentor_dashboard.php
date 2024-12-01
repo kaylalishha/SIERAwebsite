@@ -41,7 +41,7 @@ if ($mentor_result->num_rows > 0) {
 // Ambil data mahasiswa berdasarkan kelompok yang sama
 $mahasiswa_list = [];
 if ($kelompok !== null) {
-    $mahasiswa_query = "SELECT nama, nim_mhs, jurusan, no_telp, id_line FROM mahasiswa WHERE kelompok = '$kelompok'";
+    $mahasiswa_query = "SELECT nama, nim_mhs, jurusan, no_telp, instagram, id_line FROM mahasiswa WHERE kelompok = '$kelompok'";
     $mahasiswa_result = $conn->query($mahasiswa_query);
 
     if ($mahasiswa_result->num_rows > 0) {
@@ -147,6 +147,7 @@ $conn->close();
                                     <th class="py-2 px-4 border-b">NIM</th>
                                     <th class="py-2 px-4 border-b">Program Studi</th>
                                     <th class="py-2 px-4 border-b">No. Telp</th>
+                                    <th class="py-2 px-4 border-b">Instagram</th>
                                     <th class="py-2 px-4 border-b">ID Line</th>
                                 </tr>
                             </thead>
@@ -157,6 +158,7 @@ $conn->close();
                                         <td class="py-2 px-4 border-b"><?php echo $mahasiswa['nim_mhs']; ?></td>
                                         <td class="py-2 px-4 border-b"><?php echo $mahasiswa['jurusan']; ?></td>
                                         <td class="py-2 px-4 border-b"><?php echo $mahasiswa['no_telp']; ?></td>
+                                        <td class="py-2 px-4 border-b"><?php echo $mahasiswa['instagram']; ?></td>
                                         <td class="py-2 px-4 border-b"><?php echo $mahasiswa['id_line']; ?></td>
                                     </tr>
                                 <?php endforeach; ?>

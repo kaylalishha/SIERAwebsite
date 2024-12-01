@@ -6,24 +6,21 @@ if (!isset($_SESSION['id_user']) || $_SESSION['role'] != 'mentor') {
 }
 
 // Koneksi ke database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "dbase_siera";
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include 'connectdb.php';
 
 // Ambil data dari form
 $id_user = $_SESSION['id_user'];
-$nim_mentor = $_POST['nim_mentor'];
+$sql = "SELECT nim_user, kelompok FROM user WHERE id_user = '$id_user'";
+$result = $conn->query($sql);
+
+
+$resform = $result->fetch_assoc();
+
+$nim_mentor = $resform['nim_user'];
 $nama = $_POST['nama'];
 $fakultas = $_POST['fakultas'];
 $jurusan = $_POST['jurusan'];
-$kelompok = $_POST['kelompok'];
+$kelompok = $resform['kelompok'];
 $no_telp = $_POST['no_telp'];
 $instagram = $_POST['instagram'];
 $id_line = $_POST['id_line'];
