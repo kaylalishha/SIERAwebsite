@@ -24,7 +24,7 @@ include 'profileAdd.php';
         </div>
         <ul>
           <li><a href="#">Home</a></li>
-          <li><a href="#">Cari Pengguna</a></li>
+          <li><a href="pageKelompok.php">Cari Pengguna</a></li>
           <li><a href="tugas.php">Tugas</a></li>
         </ul>
         <div class="profile">

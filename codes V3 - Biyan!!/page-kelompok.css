@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.page-container {
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+}
+
+nav {
+height: 145px;
+width: 100%;
+display: flex;
+align-items: center;
+background-color: #72bf78;
+position: fixed;
+left: 0;
+top: 0;
+right: 0;
+justify-content: space-between;
+
+z-index: 1000; /* Pastikan navbar selalu berada di atas elemen lain */
+}
+nav ul li a {
+text-align: center;
+font-size: 26px;
+font-weight: bold;
+color: #ffffff;
+text-decoration: none;
+justify-content: end;
+margin-right: 30px;
+}
+nav ul li a:hover {
+color: white;
+}
+
+nav ul {
+display: flex;
+gap: 60px;
+list-style-type: none;
+margin: 0;
+padding: 0;
+}
+
+.logo {
+margin-left: 75px;
+}
+
+.profile {
+margin-right: 75px;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 
+        4px 4px 6px rgba(0, 128, 0, 0.3), /* Shadow kanan bawah berwarna hijau */
+        -4px 4px 6px rgba(0, 128, 0, 0.3), /* Shadow kiri bawah berwarna hijau */
+        0 4px 6px rgba(0, 128, 0, 0.3); /* Shadow bawah berwarna hijau */
+    padding: 15px;
+    text-align: center;
+    width: 250px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}        
+.card:hover {
+    transform: scale(1.05);
+}
+.card p {
+    margin: 10px 0;
+}
+.card p:first-child {
+    font-weight: bold;
+    font-size: 1.2em; /* Ukuran font nama diperbesar */
+}
+
+/* Pop-up Styles */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7); /* Warna latar belakang lebih gelap */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+.popup-card {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 30px; /* Padding diperbesar */
+    width: 500px; /* Lebar popup diperbesar */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Bayangan lebih tebal */
+    display: flex;
+    align-items: center;
+}
+.popup-card img {
+    width: 150px; /* Ukuran gambar diperbesar */
+    height: 225px; /* Ukuran gambar diperbesar */
+    border-radius: 10px;
+    margin-right: 20px;
+}
+.popup-card .info {
+    display: flex;
+    flex-direction: column;
+}
+.popup-card .info h2 {
+    margin: 0;
+    font-size: 24px; /* Ukuran font nama diperbesar */
+    font-weight: bold;
+}
+.popup-card .info p {
+    margin: 5px 0;
+    font-size: 16px; /* Ukuran font detail diperbesar */
+}
+.popup-card .info p span {
+    font-weight: normal;
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px; /* Ukuran font close button diperbesar */
+    font-weight: bold;
+    cursor: pointer;
+}
