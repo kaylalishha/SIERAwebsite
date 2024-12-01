@@ -1,0 +1,25 @@
+{
+  "nama_mentor": "Caleb Anthony",
+  "anggota": [
+    {
+      "foto": "path/to/foto1.jpg",
+      "nama": "Andi",
+      "nim": "123456",
+      "fakultas": "Fakultas Teknik",
+      "jurusan": "Teknik Informatika",
+      "nomor_hp": "081234567890",
+      "instagram": "@andi_informatika",
+      "id_line": "andi123"
+    },
+    {
+      "foto": "path/to/foto2.jpg",
+      "nama": "Budi",
+      "nim": "234567",
+      "fakultas": "Fakultas Ekonomi",
+      "jurusan": "Manajemen",
+      "nomor_hp": "082345678901",
+      "instagram": "@budi_ekonomi",
+      "id_line": "budi456"
+    }
+  ]
+}
