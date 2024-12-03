@@ -88,7 +88,7 @@ $nim_mhs = $resultMahasiswa->fetch_assoc()['nim_mhs'];
 
                             // Jika file_path tersedia, tampilkan sebagai tautan dan tombol hapus
                             if (!empty($row['file_path'])) {
-                                echo '<a href="Uploads/' . htmlspecialchars($row['file_path']) . '" class="upload-link" target="_blank">Lihat File</a>';
+                                echo '<a href="' . htmlspecialchars($row['file_path']) . '" class="upload-link" target="_blank">Lihat File</a>';
                                 echo '<form action="delete_tugas.php" method="POST" style="display:inline;">
                                         <input type="hidden" name="id_tugas" value="' . htmlspecialchars($row['id_tugas']) . '">
                                         <input type="hidden" name="file_path" value="' . htmlspecialchars($row['file_path']) . '">

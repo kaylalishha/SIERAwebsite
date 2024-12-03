@@ -6,6 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
     $id_user = $_SESSION['id_user']; // Ambil id_user dari sesi
     $id_tugas = $_POST['id_tugas'];
     $file = $_FILES['file'];
+    
 
     // Query untuk mendapatkan nim_mhs dan kelompok dari tabel mahasiswa
     $queryMahasiswa = "SELECT nim_mhs, kelompok FROM mahasiswa WHERE id_user = '$id_user'";
@@ -24,15 +25,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['file'])) {
             $dataMentor = $resultMentor->fetch_assoc();
             $nim_mentor = $dataMentor['nim_mentor'];
 
-            // Proses upload file
-            $targetDir = "Uploads/";
-            $fileName = basename($file["name"]);
-            $targetFile = $targetDir . $fileName;
-
-            if (move_uploaded_file($file["tmp_name"], $targetFile)) {
-                // Simpan informasi file ke database
-                $queryInsert = "INSERT INTO penilaian_tugas (nim_mhs, nim_mentor, id_tugas, file_path) 
-                                VALUES ('$nim_mhs', '$nim_mentor', '$id_tugas', '$targetFile')";
+               // Proses upload file
+               $targetDir = "Uploads/";
+               $fileName = basename($file["name"]);
+               
+               // Membuat nama file unik dengan menambahkan timestamp dan ID unik
+               $uniqueFileName = uniqid(time() . "_") . $fileName;
+   
+               // Menentukan path file yang akan disimpan
+               $targetFile = $targetDir . $uniqueFileName;
+   
+               if (move_uploaded_file($file["tmp_name"], $targetFile)) {
+                   // Simpan informasi file ke database
+                   $queryInsert = "INSERT INTO penilaian_tugas (nim_mhs, nim_mentor, id_tugas, file_path) 
+                                   VALUES ('$nim_mhs', '$nim_mentor', '$id_tugas', '$targetFile')";
                 if ($conn->query($queryInsert)) {
                     header("Location: tugas.php");
                 } else {

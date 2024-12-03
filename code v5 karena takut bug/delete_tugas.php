@@ -19,9 +19,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id_tugas'], $_POST['f
     $nim_mhs = $result->fetch_assoc()['nim_mhs'];
 
     // Hapus file dari direktori Uploads/
-    $file_full_path = "Uploads/" . $file_path;
-    if (file_exists($file_full_path)) {
-        unlink($file_full_path);
+    if (file_exists($file_path)) {
+        unlink($file_path);
     }
 
     // Hapus record dari tabel penilaian_tugas

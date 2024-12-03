@@ -46,7 +46,7 @@ if ($result->num_rows > 0) {
           <li><a href="tugas.php">Tugas</a></li>
         </ul>
         <div class="profile">
-          <a href="profile.php"><img src="<?php echo $profile_image; ?>" alt="Profile" width="65" height="65" style="border-radius: 50%;">
+          <a href="profile.php"><img src="<?php echo $profile_image; ?>" alt="Profile" width="65" height="65" style="border-radius: 50%; object-fit: cover;">
         </a>
         </div>
       </nav>
