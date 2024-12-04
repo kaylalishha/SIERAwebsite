@@ -96,7 +96,7 @@ $conn->close();
             <a href="mentor_profile.php">
                 <div class="bg-white rounded-xl shadow-md p-6 mb-6 border">
                 <div class="flex items-center space-x-4">
-                    <img src="<?php echo $profile_image; ?>" alt="Profile" class="rounded-full w-14 h-14">
+                    <img src="<?php echo $profile_image; ?>" alt="Profile" class="rounded-full w-14 h-14 object-cover">
                     <div>
                         <div class="font-medium text-lg"><?php echo $nama_mentor; ?></div>
                         <div class="font-medium text-lg"><?php echo $nim_mentor; ?></div>

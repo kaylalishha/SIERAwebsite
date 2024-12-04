@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 03, 2024 at 05:36 PM
+-- Generation Time: Nov 26, 2024 at 04:47 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `katalog_tugas` (
   `id_tugas` int(11) NOT NULL,
-  `nama_tugas` varchar(25) NOT NULL,
+  `nama_tugas` varchar(10) NOT NULL,
   `deskripsi` text DEFAULT NULL,
   `tanggal_dibuat` date NOT NULL,
   `tanggal_deadline` date NOT NULL,
@@ -42,9 +42,9 @@ CREATE TABLE `katalog_tugas` (
 
 INSERT INTO `katalog_tugas` (`id_tugas`, `nama_tugas`, `deskripsi`, `tanggal_dibuat`, `tanggal_deadline`, `tipe`) VALUES
 (1, 'Ekspedisi ', 'Buat video mengenai daerah asal kalian.\nSilahkan upload ke Google Drive dan kumpulkan link upload dengan file PDF.', '2024-11-01', '2024-11-15', 'PDF'),
-(2, 'Get to Know Me', 'Buatlah video perkenalan diri kalian.\nSilahkan upload ke Google Drive dan kumpulkan link upload dengan file PDF.', '2024-11-05', '2024-11-20', 'PDF'),
-(3, 'Infografis Bela Negara', 'Buat poster infografis dengan tema bela negara. Silahkan upload file poster berbentuk PDF atau Foto.', '2024-11-10', '2024-11-25', 'PDF/Foto'),
-(4, 'Keseruan Patribera', 'Buat video mengenai keseruan Patribera. Silahkan upload ke Google Drive dan kumpulkan link upload dengan file PDF.', '2024-11-12', '2024-11-30', 'PDF');
+(2, 'Get to Kno', 'Buat video perkenalan diri.', '2024-11-05', '2024-11-20', 'PDF'),
+(3, 'Infografis', 'Buat poster infografis dengan tema bela negara.', '2024-11-10', '2024-11-25', 'PDF/Foto'),
+(4, 'Keseruan P', 'Buat video mengenai keseruan Patribera.', '2024-11-12', '2024-11-30', 'PDF');
 
 -- --------------------------------------------------------
 
@@ -74,8 +74,7 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`id_user`, `nim_mhs`, `nama`, `domisili`, `tanggal_lahir`, `fakultas`, `jurusan`, `asal_sma`, `kelompok`, `bio`, `no_telp`, `instagram`, `id_line`, `profile_mhs`) VALUES
-(3, '2410512095', 'Ahmad Sauki', 'Jakarta', '2024-12-02', 'Ekonomi dan Bisnis', 'Perbankan dan Keuangan - D3', 'SMAN 46 Jakarta', 1, 'Alhamdulillah Luar Biasa', '0909090909090', 'sauki_ing', 'sauki_line', 'default.png'),
-(1, '2410512107', 'Arsya Rafidya', 'Jakarta', '2024-11-26', 'Ilmu Komputer', 'Sistem Informasi - S1', '', 1, 'Alhamdulillah Luar Biasa ahay', '087808780878', 'arsya_ing', 'arsya_line', '674f30a211086-WhatsApp Image 2024-12-02 at 23.25.03.jpeg');
+(1, '2410512107', 'Arsya Rafidya', 'Jakarta', '2024-11-26', 'Ilmu Komputer', 'Sistem Informasi - S1', 'SMAN 46 Jakarta', 1, 'Alhamdulillah Luar Biasa', '087808780878', 'arsya_ing', 'arsya_line', 'default.png');
 
 -- --------------------------------------------------------
 
@@ -101,7 +100,7 @@ CREATE TABLE `mentor` (
 --
 
 INSERT INTO `mentor` (`id_user`, `nim_mentor`, `nama`, `fakultas`, `jurusan`, `kelompok`, `id_line`, `no_telp`, `instagram`, `profile_mtr`) VALUES
-(2, '2310512096', 'Caleb Anthony Evan', 'Ilmu Komputer', 'Sistem Informasi - S1', 1, 'calebanthonyee', '087808780878', 'anthonyevn_', '674f21f5160ed-WhatsApp Image 2024-12-02 at 23.25.03.jpeg');
+(2, '2310512096', 'Hilmansyah Putra', 'Ilmu Komputer', 'Sistem Informasi - S1', 1, 'hilman_line', '087808780878', 'hilman_ing', 'default.png');
 
 -- --------------------------------------------------------
 
@@ -118,6 +117,13 @@ CREATE TABLE `penilaian_tugas` (
   `nilai` float DEFAULT 0,
   `komentar` text DEFAULT 'Tidak ada komentar'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `penilaian_tugas`
+--
+
+INSERT INTO `penilaian_tugas` (`id_pengumpulan`, `nim_mhs`, `nim_mentor`, `id_tugas`, `file_path`, `nilai`, `komentar`) VALUES
+(3, '2410512107', '2310512096', 1, 'Uploads/Link Pengumpulan Video Presentasi - 2310512095 (1).pdf', 100, 'Tidak ada komentar...');
 
 -- --------------------------------------------------------
 
@@ -225,7 +231,7 @@ ALTER TABLE `katalog_tugas`
 -- AUTO_INCREMENT for table `penilaian_tugas`
 --
 ALTER TABLE `penilaian_tugas`
-  MODIFY `id_pengumpulan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id_pengumpulan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `presensi`

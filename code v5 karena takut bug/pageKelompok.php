@@ -106,7 +106,7 @@ $stmt_mahasiswa->close();
                         '<?php echo htmlspecialchars($teman['instagram']); ?>', 
                         '<?php echo htmlspecialchars($teman['id_line']); ?>'
                     )">
-                        <img src="Assets/profile_mhs/<?php echo htmlspecialchars($teman['profile_mhs']); ?>" alt="Foto Mahasiswa" width="100" style='object-fit: cover;'/>
+                        <img src="Assets/profile_mhs/<?php echo htmlspecialchars($teman['profile_mhs']); ?>" alt="Foto Mahasiswa" width="100" height="100 "style='object-fit: cover;'/>
                         <p><strong><?php echo htmlspecialchars($teman['nama']); ?></strong></p>
                         <p><?php echo htmlspecialchars($teman['nim_mhs']); ?></p>
                     </div>
