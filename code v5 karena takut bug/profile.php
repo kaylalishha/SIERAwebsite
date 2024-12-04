@@ -55,12 +55,15 @@ if ($result->num_rows > 0) {
         <!-- Foto Profil -->
         <div class="profile-picture">
             <img src="Assets/profile_mhs/<?php echo htmlspecialchars($mahasiswa['profile_mhs']); ?>" id="profile-preview">
-            <button type="button" class="edit-photo-button" id="edit-photo-button">Edit Foto Profil</button>
-            <!-- Tombol Hapus Foto Profil -->
-            <form action="hapus_foto.php" method="POST">
-                <button type="submit" name="hapus_foto" class="btn btn-danger">Hapus Foto Profil</button>
-            </form>
-
+            <div class="pic-button" style="display: flex; justify-content: center;">
+                <button type="button" class="edit-photo-button" id="edit-photo-button">Edit Foto Profil</button>
+            </div>
+            <div class="pic-button" style="display: flex; justify-content: center;">
+                <!-- Tombol Hapus Foto Profil -->
+                <form action="hapus_foto.php" method="POST">
+                    <button type="submit" name="hapus_foto" class="delete-photo-button">Hapus Foto Profil</button>
+                </form>
+            </div>
         </div>
 
         <!-- Form Profil -->

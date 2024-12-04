@@ -114,7 +114,7 @@ button:disabled {
 }
 
 #edit-button {
-    background-color: #007bff;
+    background-color: #72bf78;
     color: #fff;
 }
 
@@ -122,6 +122,18 @@ button:disabled {
     background-color: #e74c3c;
     color: #fff;
     margin-top: 10px;
+}
+
+
+.edit-photo-button {
+    background-color: #007bff;
+    color: #fff;
+    max-width: 25%;
+}
+
+.delete-photo-button {
+    background-color: #e74c3c;
+    color: #fff;
 }
 
 /* Overlay background */
