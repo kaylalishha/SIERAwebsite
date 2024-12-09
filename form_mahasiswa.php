@@ -123,7 +123,7 @@ $faculties = [
                     <h3>Pages</h3>
                     <ul>
                         <li>Home</li>
-                        <li>Cari Pengguna</li>
+                        <li>Kelompok</li>
                         <li>Tugas</li>
                         <li>Profile</li>
                     </ul>

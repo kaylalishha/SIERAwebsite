@@ -42,7 +42,7 @@ if ($result->num_rows > 0) {
         </div>
         <ul>
           <li><a href="index.php">Home</a></li>
-          <li><a href="pageKelompok.php">Cari Pengguna</a></li>
+          <li><a href="pageKelompok.php">Kelompok</a></li>
           <li><a href="tugas.php">Tugas</a></li>
         </ul>
         <div class="profile">
